@@ -1,33 +1,38 @@
-let res = document.querySelector('h1');
-let add = document.getElementById('add');
-let sub = document.getElementById('subtract');
-let mul = document.getElementById('multiply');
-let div = document.getElementById('divide');
+let res = document.querySelector("h1");
+let sub = document.getElementById("Sub");
+let add = document.getElementById("Add");
+let div = document.getElementById("Div");
+let mul = document.getElementById("Mul");
 
-add.addEventListener("click", function(){
+function subtraction(){
     let userInput = document.getElementById('userInput').value;
-    let userInput1 = document.getElementById('userInput1').value;
-    let result = parseInt(userInput) + parseInt(userInput1);
+    let userInput2 = document.getElementById('userInput2').value;
+    let result = userInput - userInput2;
     res.innerText = result;
-})
+  }
 
-sub.addEventListener("click", function(){
+  function addition(){
     let userInput = document.getElementById('userInput').value;
-    let userInput1 = document.getElementById('userInput1').value;
-    let result = userInput - userInput1;
+    let userInput2 = document.getElementById('userInput2').value;
+    let result = parseInt(userInput) + parseInt(userInput2);
     res.innerText = result;
-})
+  }
 
-mul.addEventListener("click", function(){
+  function division(){
     let userInput = document.getElementById('userInput').value;
-    let userInput1 = document.getElementById('userInput1').value;
-    let result = userInput * userInput1;
+    let userInput2 = document.getElementById('userInput2').value;
+    let result = userInput / userInput2;
     res.innerText = result;
-})
+  }
 
-div.addEventListener("click", function(){
+  function multiplication(){
     let userInput = document.getElementById('userInput').value;
-    let userInput1 = document.getElementById('userInput1').value;
-    let result = userInput / userInput1;
+    let userInput2 = document.getElementById('userInput2').value;
+    let result = userInput * userInput2;
     res.innerText = result;
-})
+  }
+
+add.addEventListener("click", addition)
+sub.addEventListener("click", subtraction)
+div.addEventListener("click", division)
+mul.addEventListener("click", multiplication)
